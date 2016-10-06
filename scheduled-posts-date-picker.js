@@ -10,9 +10,9 @@
 
 (function ($) {
   $(document).ready(function() {
-    var wp_mm =   $('#mm'),
-        wp_dd =   $('#jj'),
-        wp_yyyy = $('#aa');
+    wp_mm =   $('#mm');
+    wp_dd =   $('#jj');
+    wp_yyyy = $('#aa');
 
     $(wp_dd).DatePicker({
       format:   'm/d/Y',
@@ -20,24 +20,24 @@
       starts:   1,
       position: 'bottom',
       onBeforeShow: function(){
-        var today =   new Date($(wp_mm).val()+'/'+$(wp_dd).val()+'/'+$(wp_yyyy).val()),
-            dd =      today.getDate(),
-            mm =      today.getMonth()+1, //January is 0!
-            yyyy =    today.getFullYear();
+        today =   new Date($(wp_mm).val()+'/'+$(wp_dd).val()+'/'+$(wp_yyyy).val());
+        dd =      today.getDate();
+        mm =      today.getMonth()+1; //January is 0!
+        yyyy =    today.getFullYear();
         if(dd<10) { // Add leading 0 for days
-            dd='0'+dd
+            dd='0'+dd;
         }
         if(mm<10) { // Add leading 0 for months
-            mm='0'+mm
+            mm='0'+mm;
         }
         today = mm+'/'+dd+'/'+yyyy;
         $(wp_dd).DatePickerSetDate(today, true);
       },
       onChange: function(formated, dates){
-        var selectedDate =  new Date(dates),
-            selectedDay =   selectedDate.getDate(),
-            selectedMonth = selectedDate.getMonth()+1,
-            selectedYear =  selectedDate.getFullYear();
+        selectedDate =  new Date(dates);
+        selectedDay =   selectedDate.getDate();
+        selectedMonth = selectedDate.getMonth()+1;
+        selectedYear =  selectedDate.getFullYear();
 
         if(selectedDay<10) { // Add leading 0 for days
             selectedDay='0'+selectedDay;
@@ -60,6 +60,8 @@
 
 // Patch for WordPress' version of jQuery
 // Patch found here: http://stackoverflow.com/questions/29298462/c-curcss-is-not-a-function-bug-from-jquery#29298828
-jQuery.curCSS = function(element, prop, val) {
-    return jQuery(element).css(prop, val);
-};
+if (typeof jQuery.curCSS === 'undefined') {
+  jQuery.curCSS = function(element, prop, val) {
+      return jQuery(element).css(prop, val);
+  };
+}
