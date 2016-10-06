@@ -3,7 +3,7 @@ Contributors: cdevroe
 Tags: scheduledposts, datepicker, dates, jquery
 Requires at least: 4.0
 Tested up to: 4.6
-Stable tag: 0.1.0
+Stable tag: 0.2.0
 
 == Description ==
 
@@ -15,6 +15,7 @@ This simple plugin adds a date picker to the day input when scheduling a post. T
 
 * Moved date picker to the bottom of element
 * Month and Year are now also set by picker
+* Fixed JS error on load.
 
 = 0.1.0 =
 
