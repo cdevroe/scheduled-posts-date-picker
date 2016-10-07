@@ -11,6 +11,10 @@ This simple plugin adds a date picker to the day input when scheduling a post. T
 
 == Changelog ==
 
+= 0.2.1 =
+
+* Only loads the JavaScripts and CSS on the post edit screen.
+
 = 0.2.0 =
 
 * Moved date picker to the bottom of element
