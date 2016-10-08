@@ -6,7 +6,7 @@
 Plugin Name: Scheduled Posts Date Picker
 Plugin URI: http://cdevroe.com/wp-spdp
 Description: Replaces the default scheduled post date picker with an easier to understand one.
-Version: 0.2.1
+Version: 0.2.2
 Author: Colin Devroe
 Author URI: http://cdevroe.com
 License: GPLv2 or later
